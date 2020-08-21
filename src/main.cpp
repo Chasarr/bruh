@@ -26,6 +26,11 @@ unsigned long int lastPressedTime = 0;
 unsigned int lastButtonState = HIGH;
 boolean pressState = false;
 boolean alreadyPressed = false;     //Has the pressed button already returned true once?
+/**
+ * Makes sure that a button press doesn't spam inputs
+ * @param btnState input 1/HIGH if button is pressed, 0/LOW if button is released
+ * @return true if pressed, false if not pressed
+ */
 boolean debounce(const unsigned short int &btnState) {
     //If the button is pressed the first time the time is stored in 'lastPressedTime' variable
     //'pressState' is set to true, which prevents the time from being measured again
