@@ -7,10 +7,6 @@
 
 boolean debounce(const unsigned short int &btnState);
 
-unsigned long int lastPressedTime = 0;
-unsigned int lastButtonState = HIGH;
-
-
 void setup() {
     Serial.begin(115200);
     Keyboard.begin();
@@ -26,6 +22,8 @@ void loop() {
     }
 }
 
+unsigned long int lastPressedTime = 0;
+unsigned int lastButtonState = HIGH;
 boolean pressState = false;
 boolean alreadyPressed = false;     //Has the pressed button already returned true once?
 boolean debounce(const unsigned short int &btnState) {
